@@ -9,6 +9,6 @@ Redmine::Plugin.register :link_plugin do
   author_url 'https://github.com/Sergo8707'
 
   settings \
-    :default => {'empty' => true},
-    :partial => 'settings/settings'
+    default: { 'empty' => true },
+    partial: 'settings/settings'
 end

@@ -17,24 +17,19 @@ module Listener
   end
   module InstanceMethods
     def send_post
-      begin
-        input_link = Setting.link_plugin ['input_link']
-        link = URI(input_link)
-        http = Net::HTTP.new(link.host, link.port)
+      input_link = Setting.link_plugin ['input_link']
+      link = URI(input_link)
+      http = Net::HTTP.new(link.host, link.port)
 
-        params = {issueid: self.id, userid: User.current.id, datetime: self.updated_on}.to_json
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
-        http.post(uri.path, params, headers)
-      rescue => e
-      end
+      params = { issueid: id, userid: User.current.id, datetime: updated_on }.to_json
+      headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+      http.post(uri.path, params, headers)
+    rescue => e
     end
   end
 end
 
 # добавляем подготовку callback который будет запускаться перед запросом
 Rails.configuration.to_prepare do
-  unless Issue.included_modules.include? Listener
-    Issue.send(:include, Listener)
-  end
+  Issue.send(:include, Listener) unless Issue.included_modules.include? Listener
 end
-
