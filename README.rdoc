@@ -14,3 +14,7 @@ datetime - дата и время внесения изменений
  'userid':12345,
  'datetime':'2014-13-12 12:13:14'
 }
+
+Установка плагина
+
+git clone git@github.com:Sergo8707/plugin-for-Redmine.git
