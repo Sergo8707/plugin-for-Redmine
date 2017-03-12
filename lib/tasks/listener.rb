@@ -8,7 +8,6 @@ module Listener
     base.send(:include, InstanceMethods)
     base.class_eval do
       unloadable
-      # Отправляем выгружаемые файлы
       after_update :send_post
     end
   end
@@ -17,8 +16,8 @@ module Listener
   end
   module InstanceMethods
     def send_post
-      input_link = Setting.link_plugin ['input_link']
-      link = URI(input_link)
+      request_url = Setting.link_plugin ['request_url']
+      link = URI(request_url)
       http = Net::HTTP.new(link.host, link.port)
 
       params = { issueid: id, userid: User.current.id, datetime: updated_on }.to_json
