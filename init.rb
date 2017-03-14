@@ -7,7 +7,7 @@ Rails.application.config.to_prepare do
   IssueRelationsController.send :include, TaskLink::IssueRelationsPatch
 end
 
-Redmine::Plugin.register :task_link do
+Redmine::Plugin.register :plugin_for_Redmine do
   name 'Sergo plugin'
   author 'Sergiy Drach'
   description 'This is a plugin for Redmine'
