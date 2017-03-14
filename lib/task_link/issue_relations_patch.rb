@@ -1,4 +1,4 @@
-module TaskUpdateWatcher
+module TaskLink
   module IssueRelationsPatch
     def self.included(base)
       base.extend(ClassMethods)

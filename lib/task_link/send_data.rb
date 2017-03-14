@@ -1,7 +1,7 @@
 require 'net/http'
 require 'uri'
 
-module TaskUpdateWatcher
+module TaskLink
   class SendData
     attr_reader :data
 
@@ -14,7 +14,7 @@ module TaskUpdateWatcher
     end
 
     def request_url
-      Setting.plugin_link_plugin['request_url']
+      Setting.task_link['request_url']
     end
 
     private

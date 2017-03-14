@@ -1,4 +1,4 @@
-module TaskUpdateWatcher
+module TaskLink
   module AttachmentPatch
     def self.included(base)
       base.extend(ClassMethods)

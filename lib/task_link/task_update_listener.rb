@@ -1,4 +1,4 @@
-module TaskUpdateWatcher
+module TaskLink
   class TaskUpdateNotifier < Redmine::Hook::Listener
     def controller_issues_bulk_edit_before_save(context = {})
       SendData.new(context[:issue].id, User.current.id).do if context[:issue]
