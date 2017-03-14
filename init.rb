@@ -12,7 +12,7 @@ Redmine::Plugin.register :task_link do
   author 'Sergiy Drach'
   description 'This is a plugin for Redmine'
   version '0.0.1'
-  url 'https://github.com/Sergo8707/plugin-for-Redmine'
+  url 'https://github.com/Sergo8707/plugin_for_Redmine'
   author_url 'https://github.com/Sergo8707'
 
   settings default: { 'request_url' => 'http://requestb.in/' },

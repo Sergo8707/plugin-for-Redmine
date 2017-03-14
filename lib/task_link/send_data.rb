@@ -14,7 +14,7 @@ module TaskLink
     end
 
     def request_url
-      Setting.task_link['request_url']
+      Setting.plugin_for_Redmine['request_url']
     end
 
     private
