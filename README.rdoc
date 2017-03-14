@@ -17,4 +17,4 @@ datetime - дата и время внесения изменений
 
 Установка плагина
 
-git clone git@github.com:Sergo8707/plugin-for-Redmine.git
+git clone git@github.com:Sergo8707/plugin_for_Redmine.git
